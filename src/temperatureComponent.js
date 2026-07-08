@@ -1,8 +1,9 @@
 import { convertToCelsius, convertToFahrenheit } from "./utils.js";
 
-function temperatureComponent(temp, condition){
+function temperatureComponent(data){
     //Expecting temp from API to be in fahrenheit
-    let temperature = convertToCelsius(temp);
+    let temperature = convertToCelsius(data.currentConditions.temp);
+    let currentConditions = data.currentConditions.conditions;
 
     const tempContainer = document.createElement("div");
     tempContainer.classList.add("temp-component");
@@ -36,7 +37,7 @@ function temperatureComponent(temp, condition){
                 fahrenheitBtn.classList.remove("active");
 
                 //Adjust to show temp in degrees celsius 
-                temperature = convertToCelsius(temp);
+                temperature = convertToCelsius(data.currentConditions.temp);
                 h1.textContent = `${temperature}`
             }
             
@@ -50,7 +51,7 @@ function temperatureComponent(temp, condition){
                 celsiusBtn.classList.remove("active");
 
                   //Adjust to show temp in degrees fahrenheit
-                temperature = convertToFahrenheit(temp);
+                temperature = convertToFahrenheit(data.currentConditions.temp);
                 h1.textContent = `${temperature}`
             }
         }
@@ -61,7 +62,7 @@ function temperatureComponent(temp, condition){
     buttonsContainer.append(celsiusBtn, pipe, fahrenheitBtn);
 
     const tempCondition = document.createElement("p");
-    tempCondition.textContent = `${condition}`;
+    tempCondition.textContent = `${currentConditions}`;
 
     rightContainer.append(buttonsContainer, tempCondition);
 
