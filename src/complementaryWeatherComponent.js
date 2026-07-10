@@ -4,10 +4,10 @@ import windIcon from "./assets/icons/wind.svg";
 import rainIcon from "./assets/icons/rain.svg";
 
 function complementaryWeatherComponent(obj){
-    let tempMin = convertToCelsius(obj.tempmin);
-    let tempMax = convertToCelsius(obj.tempmax);
-    let wind = convertToKph(obj.windspeed);
-    let rainChance = obj.precipprob;
+    let tempMin = convertToCelsius(obj.days[0].tempmin);
+    let tempMax = convertToCelsius(obj.days[0].tempmax);
+    let wind = convertToKph(obj.currentConditions.windspeed);
+    let rainChance = obj.days[0].precipprob;
 
     const mainContainer = document.createElement("div");
     mainContainer.classList.add("weather-details");
