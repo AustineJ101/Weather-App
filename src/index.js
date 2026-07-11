@@ -7,6 +7,20 @@ import { renderErrorMessage, renderWeatherData, showLoadingState } from "./dom.j
 const input = document.querySelector("input#city");
 const fetchBtn = document.querySelector("form button");
 
+let currentCity = "Nairobi";
+
+(async () => {
+    input.focus();
+    showLoadingState();
+    try{
+        const data = await getWeatherData(currentCity); 
+        renderWeatherData(data);
+        input.value = "";
+        input.focus();
+    }catch(error){
+        renderErrorMessage(error);
+    }
+})()
 
 fetchBtn.addEventListener("click", async (e) => {
     e.preventDefault();
@@ -30,5 +44,4 @@ fetchBtn.addEventListener("click", async (e) => {
     }
      
 })
-
 
