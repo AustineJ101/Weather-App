@@ -3,16 +3,16 @@ import "./reset.css";
 
 import { getWeatherData } from "./weatherData.js";
 import { renderErrorMessage, renderWeatherData, showLoadingState } from "./dom.js";
+import { getCurrentCity, setCurrentCity } from "./storage.js";
 
 const input = document.querySelector("input#city");
 const fetchBtn = document.querySelector("form button");
-
-let currentCity = "Nairobi";
 
 (async () => {
     input.focus();
     showLoadingState();
     try{
+        let currentCity = getCurrentCity();
         const data = await getWeatherData(currentCity); 
         renderWeatherData(data);
         input.value = "";
@@ -27,8 +27,10 @@ fetchBtn.addEventListener("click", async (e) => {
     const cityName = input.value;
     try{
         if(cityName){
+            setCurrentCity(cityName);
+            let currentCity = getCurrentCity();
             showLoadingState();
-            const data = await getWeatherData(cityName);
+            const data = await getWeatherData(currentCity);
             console.log(data);
             renderWeatherData(data)
            
