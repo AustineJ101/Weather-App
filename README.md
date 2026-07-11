@@ -1,5 +1,5 @@
 # Weather App
-
+![Weather App Demo](.src/assets/images/App.gif)
 A weather application built with HTML, CSS, and JavaScript as part of
 The Odin Project's Asynchronous JavaScript and APIs curriculum.
 
@@ -7,6 +7,7 @@ The project demonstrates working with asynchronous JavaScript, Promises,
 API consumption, and DOM manipulation by retrieving and displaying
 real-time weather information.
 
+[Live Preview]("https://austinej101.github.io/Weather-App/")
 
 ## Features
 
