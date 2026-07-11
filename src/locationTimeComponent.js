@@ -1,7 +1,7 @@
 import { capitalizeLocationFirstLetter } from "./utils.js";
 
 function locationTimeComponent(obj){
-    const address = capitalizeLocationFirstLetter(obj.address);
+    const address = capitalizeLocationFirstLetter(obj.resolvedAddress);
     const timezone = obj.timezone;
 
     const now = new Date();
