@@ -15,7 +15,7 @@ async function getWeatherData(location){
 
     } catch(error){
         console.log(`Internal Log: ${error.message}`)
-        throw new Error("Something Went Wrong...Please try again")
+        throw new Error("Oops! Something went wrong...Please check city name and try again")
     }
 }
 
