@@ -1,9 +1,9 @@
-import { locationTimeComponent } from "./locationTimeComponent.js";
-import { temperatureComponent } from "./temperatureComponent.js";
-import { foreCastComponent } from "./forecastComponent.js";
-import { complementaryWeatherComponent } from "./complementaryWeatherComponent.js";
-import { errorMessageComponent } from "./errorMessageComponent.js";
-import { loadingStateComponent } from "./loadingStateComponent.js";
+import { locationTimeComponent } from "./components/locationTimeComponent.js";
+import { temperatureComponent } from "./components/temperatureComponent.js";
+import { foreCastComponent } from "./components/forecastComponent.js";
+import { complementaryWeatherComponent } from "./components/complementaryWeatherComponent.js";
+import { errorMessageComponent } from "./components/errorMessageComponent.js";
+import { loadingStateComponent } from "./components/loadingStateComponent.js";
 
 const main = document.querySelector("main");
 const locationTimeDateWrapper = document.querySelector(".location-time-date");
