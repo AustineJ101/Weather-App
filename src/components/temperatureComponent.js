@@ -51,7 +51,7 @@ function temperatureComponent(data){
                 celsiusBtn.classList.remove("active");
 
                   //Adjust to show temp in degrees fahrenheit
-                temperature = convertToFahrenheit(data.currentConditions.temp);
+                temperature = Math.round(data.currentConditions.temp);
                 h1.textContent = `${temperature}`
             }
         }
