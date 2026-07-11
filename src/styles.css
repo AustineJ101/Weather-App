@@ -1,6 +1,159 @@
-h1{
-    color: rgb(255, 0, 51);
-    font-family: cursive;
-    text-decoration: underline;
+
+body{
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    background: linear-gradient(135deg, #0B132B 0%, #1C2541 45%, #3A2E5D 100%);
+    background-attachment: fixed;
+    color: white;
 }
 
+header{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    border-bottom: 1px solid grey;
+    padding: 10px;
+}
+
+
+main{
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 16px;
+}
+
+
+/* Temp Component styles start */
+.temp-component{
+    display: inline-flex;
+    gap: 10px;
+    align-items: center;
+    padding: 20px;
+}
+
+.temp-component h1{
+    font-size: 180px;
+    margin-top: -70px;
+}
+
+.temp-component > div{
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    margin-top: 20px;
+  
+}
+
+.temp-component button{
+    border: none;
+    background-color: transparent;
+    color: white;
+    cursor: pointer;
+    font-size: 22px;
+    opacity: 0.5;
+    transition: transform 0.25s;
+}
+
+.temp-component button:hover{
+    transform: translateY(-2px);
+}
+
+.temp-component button.active{
+    font-weight: bold;
+    opacity: 1;
+
+}
+.temp-component .custom-pipe{
+    font-size: 28px
+}
+
+.temp-component p {
+    font-size: 22px;
+}
+
+.weather-details{
+    padding: 20px;
+}
+
+.weather-details > *{
+    margin-bottom: 10px;
+    font-size: 24px;
+}
+.weather-details > div{
+    display: flex;
+    gap: 10px;
+}
+
+
+.forecast{
+    font-size: 24px;
+}
+
+.location-date-time-container h1{
+    font-size: 46px;
+}
+
+.location-date-time-container p{
+    color: rgb(153, 153, 153);
+    font-size: 20px;
+}
+
+form input{
+    outline: none;
+    border: 1px solid white;
+    padding:5px 8px;
+    background-color: rgba(255, 255, 255, 0.01);
+    color: white;
+    border-radius: 8px;
+    width: clamp(50px, 60%, 550px);
+    font-size: 18px;
+}
+
+
+form button{
+    padding: 6px 8px;
+    border: none;
+    margin-left: -8px;
+    border-radius: 0 8px 8px 0;
+    cursor: pointer;
+    font-size: 18px;
+    transition: filter 0.1s ease-in-out;
+}
+
+form button:active{
+    filter: brightness(0.7)
+}
+
+footer{
+    font-size: 18px;
+    display: flex;
+    justify-content: space-around;
+    color: rgb(158, 156, 156);
+    border-top: 1px solid grey;
+    padding: 10px;
+}
+
+.error-message{
+    font-size: 24px;
+    color: #FF8A80;
+}
+
+@keyframes spin {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+
+.spinner{
+    width: 50px;
+    height: 50px;
+    border: 3px solid white;
+    border-top-color: transparent;
+    border-bottom-color: transparent;
+    border-radius: 50%;
+    animation: spin 1s linear infinite; 
+}
