@@ -1,6 +1,6 @@
 
 function getCurrentCity(){
-    return JSON.parse(localStorage.getItem("currentCity") || "Nairobi");
+    return JSON.parse(localStorage.getItem("currentCity") || '"Nairobi"');
 }
 
 function setCurrentCity(newCity){
